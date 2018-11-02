@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="loadpage">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="R&eacute;solvez triangles donn&eacute;s trois c&ocirc;t&eacute;s ou angles connus. Elle r&eacute;sout &eacute;galement le p&eacute;rim&egrave;tre et la surface du triangle. Ce solveur est cr&eacute;&eacute; par Daren Liang et avec l'aide de Ishwar Desai">
+    <title>Le R&eacute;sous-Triangle</title>
+    <link href=
+    'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700'
+    rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="logo.ico">
+    <script src="jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js" type=
+    "text/javascript"></script>
+    <script src="easings/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="easings/jquery.easing.compatibility.js" type=
+    "text/javascript"></script>
+    <script type="text/javascript" src="solver_engine_fa.js"></script>
+    <script type="text/javascript" src="solver_engine_fa_mobile.js"></script>
+    <link href="index_fa.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap-3.3.2-dist/css/bootstrap.css" rel="stylesheet" type=
+    "text/css">
+    <link href="bootstrap-3.3.2-dist/css/bootstrap-theme.css" rel="stylesheet"
+    type="text/css">
+    <link href="bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet"
+    type="text/css"><!-- HTML5 shim for IE backwards compatibility -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body class="body">
+<div class="backgroundfill"></div>
+	<div class="load"></div>
+    <div class="background">
+        <div class="container hidden-xs hidden-sm">
+            <div class="row">
+                <div>
+                  <p class="title" style="text-align: center">Le R&eacute;sous-Triangle</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="trianglediv"><img alt="" class="triangle" height=
+                "284.00278141557237783595113438045" src="triangle.png" width=
+                "459.37500000317"></div>
+            </div>
+
+            <div class="forminput">
+                <p class="inputdes">
+                &nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdes">
+                &nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdes">
+                &nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdes">&nbsp;&nbsp;&nbsp;&nbsp;&alpha;</p><br>
+                
+                <input class="textfield" id="ainput" name="ainput" type="text"
+                value=""><input class="textfield" id="binput" name="binput"
+                type="text" value=""><input class="textfield" id="cinput" name=
+                "cinput" type="text" value=""><input class="textfield" id=
+                "pinput" name="pinput" type="text" value=""><br>
+                <br>
+
+                <p class="inputdes">
+                &nbsp;&nbsp;&nbsp;&nbsp;&beta;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdes">
+                &nbsp;&nbsp;&nbsp;&nbsp;&gamma;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdes">&nbsp;&nbsp;aire</p>
+
+                <p class="inputdes">p&eacute;rim&egrave;tre</p><br>
+                <input class="textfield" id="tinput" name="tinput" type="text"
+                value=""> <input class="textfield" id="ginput" name="ginput"
+                type="text" value=""><input class="textfield" id="arinput"
+                name="arinput" type="text" value=""><input class="textfield"
+                id="prinput" name="prinput" type="text" value="">
+            </div>
+
+            <div class="buttons">
+                <input class="buttonleft" onclick="submitTriangle();" type="submit"
+                value="Soumettre les Valeurs"> <input class="buttonright" onclick=
+                "resetTriangle();" type="reset" value="Effacer les Valeurs">
+            </div>
+            <div class="row">
+                <div class="trianglegen">
+                    <p id="trianglegen"></p>
+                </div>
+                <div class="trianglegen">
+                    <p id="trianglegen2"></p>
+                </div>
+            </div>
+            <div class="row">
+            <p align="center"><a href="awards_fa.html">Les r&eacute;compenses</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trianglesolver.html">English Website</a></p>
+<p class="about" align="center">R&eacute;sous Triangle En Ligne&nbsp;| Cr&eacute;&eacute; par Daren Liang et Ishwar Desai. Grand merci à Fred Deng et le communauté de testeurs.</p>
+                <p class="about" align="center">Version 1.2.2 | Actualisée le 7 octobre 2015</p>
+                    <p class="aboutyear" align="center">&copy; <span id="copyrightyear"></span> Tous droits r&eacute;serv&eacute;s</p>
+                </div>
+            </div>
+        <div class="container hidden-lg hidden-md">
+            <div class="row">
+                <div>
+                    <p class="titlemobile" style="text-align: center">Le R&eacute;sous-Triangle</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="triangledivmobile"><img alt="" class="trianglemobile" height=
+                "154.56" src="triangle.png" width=
+                "250"></div>
+            </div>
+
+            <div class="forminputmobile">
+                <p class="inputdesmobile">
+                &nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                
+                <p class="inputdesmobile">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <br/>
+                
+ 				<input class="textfieldmobile" id="ainputmobile" name="ainputmobile" type="text"
+                value=""><input class="textfieldmobileright" id="binputmobile" name="binputmobile"
+                type="text" value="">
+                <br/>
+                
+                <p class="inputdesmobile">
+                &nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="inputdesmobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&alpha;</p>
+                <br/>
+                
+				<input class="textfieldmobile" id="cinputmobile" name=
+                "cinputmobile" type="text" value=""><input class="textfieldmobileright" id=
+                "pinputmobile" name="pinputmobile" type="text" value="">
+                <br/>
+                
+                 <p class="inputdesmobile">
+                &nbsp;&nbsp;&nbsp;&nbsp;&beta;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+                <p class="inputdesmobile">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gamma;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <br/>
+
+               <input class="textfieldmobile" id="tinputmobile" name="tinputmobile" type="text"
+                value=""> <input class="textfieldmobileright" id="ginputmobile" name="ginputmobile"
+                type="text" value="">
+                <br/>
+
+                <p class="inputdesmobile">&nbsp;&nbsp;aire</p>
+
+                <p class="inputdesmobileper">p&eacute;rim&egrave;tre</p>
+                <br/>
+                
+                <input class="textfieldmobile" id="arinputmobile"
+                name="arinputmobile" type="text" value=""><input class="textfieldmobileright"
+                id="prinputmobile" name="prinputmobile" type="text" value="">
+            	</div>
+
+            	<div class="buttonsmobile">
+                <input class="buttonmobile" onclick="submitTrianglemobile();" type="submit"
+                value="Soumettre les Valeurs"> <input class="buttonmobile" onclick=
+                "resetTrianglemobile();" type="reset" value="Effacer les Valeurs">
+            	</div>
+
+            <div class="row">
+                <div class="trianglegenmobile"
+                    <p id="trianglegenmobile"></p>
+                </div>
+                <div class="trianglegenmobile">
+                    <p id="trianglegen2mobile"></p>
+                </div>
+            </div>
+            <div class="row">
+            		<p align="center"><a href="awards_fa.html">Les r&eacute;compenses</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trianglesolver.html">English Website</a></p>
+			        <p class="aboutmobile" align="center">Le R&eacute;sous-Triangle | Cr&eacute;&eacute; par Daren Liang et Ishwar Desai. Grand merci à Fred Deng et le communauté de testeurs.</p>
+                <p class="aboutmobile" align="center">Version 1.2.2 | Actualisée le 7 octobre 2015</p>
+                    <p class="aboutyearmobile" align="center">&copy; <span id="copyrightyearmobile"></span> Tous Droits R&eacute;serv&eacute;s</p>
+			</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="hidden-xs hidden-sm">
+            <p class="loadingMessage">Attendez S.V.P.</p><img alt="" class="loadingpic"
+            height="256" src="Hypercube_Large_Light.gif" width="256"></div>
+
+            <div class="hidden-lg hidden-md">
+            <p class="loadingMessagemobile">Attendez S.V.P.</p><img alt="" class=
+            "loadingpicmobile" height="150" src="Hypercube_Large_Light.gif"
+            width="150"></div>
+        </div>
+    </div>
+</body>
+</html>
